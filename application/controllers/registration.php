@@ -13,7 +13,6 @@ class Registration extends CI_Controller {
 	function index()
 	{
 		$this->load->view('includes/header');
-		$this->load->view('includes/menu');
 		$this->load->view('registration');
 		$this->load->view('includes/footer');
 	}
@@ -25,7 +24,7 @@ class Registration extends CI_Controller {
 		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
 		$this->form_validation->set_rules('org', 'Organization', 'required|xss_clean');
 		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean|callback_user_exists');
-		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean|md5');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
 
 		if($this->form_validation->run() != NULL)
 		{
@@ -42,7 +41,6 @@ class Registration extends CI_Controller {
 			// echo "</pre>";
 			$this->load->model('Register');
 			$this->Register->add_account($account);
-
 			redirect(base_url().'index.php/registration');
 		}
 		else
