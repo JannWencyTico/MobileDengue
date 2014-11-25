@@ -7,7 +7,6 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-        <title>Registration</title>
         <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets/css/bootstrap-theme.css'?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css">
@@ -38,7 +37,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a id="header" class="navbar-brand" href="http://localhost/Mobile/index.php/home"><b>Dengue 101: Monitoring and Reporting Dengue Cases</b></a>
+            <a id="header" class="navbar-brand" href="http://localhost/Mobile/index.php/map"><b>Dengue 101: Monitoring and Reporting Dengue Cases</b></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -74,12 +73,12 @@
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar nav-stacked">
                     <li>
-                        <a href="http://localhost/Mobile/index.php/home">
+                        <a href="http://localhost/Mobile/index.php/map">
                             <img id="ProfPic" src = "<?php echo base_url('uploads/Android') ?>"></img>
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/Mobile/index.php/home">
+                        <a href="http://localhost/Mobile/index.php/map">
                             <h4>Home</h4>
                         </a>
                     </li>

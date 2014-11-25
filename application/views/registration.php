@@ -1,3 +1,6 @@
+<head>
+    <title>Registration</title>
+</head>
 <div id="body" align="center">
     <?php
     $months = array(    
