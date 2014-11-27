@@ -6,7 +6,6 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('m_login');
     }
 
     public function index()
@@ -35,6 +34,13 @@ class Home extends CI_Controller
         $this->load->view('includes/footer');
 
         }
+    }
+
+    public function map()
+    {
+        $this->load->view('includes/header');
+        $this->load->view('map');
+        $this->load->view('includes/footer');
     }
 
     

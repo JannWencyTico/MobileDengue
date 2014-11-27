@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/Mobile/index.php/home">
+                        <a href="http://localhost/Mobile/index.php/home/map">
                             <h4>Home</h4>
                         </a>
                     </li>
