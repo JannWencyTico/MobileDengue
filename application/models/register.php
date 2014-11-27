@@ -7,7 +7,7 @@ class Register extends CI_Model {
 		$config['hostname'] = "localhost";
 		$config['username'] = "root";
 		$config['password'] = "";
-		$config['database'] = "mydb";
+		$config['database'] = "dengue";
 		$config['dbdriver'] = "mysql";
 		$config['dbprefix'] = "";
 		$config['pconnect'] = FALSE;
@@ -25,13 +25,12 @@ class Register extends CI_Model {
 	public function add_account($account)
 	{
 		$sql = "CALL registration(
+								 '".$account['username']."',
+								 '".$account['password']."',
+								 '".$account['number']."',
 								 '".$account['lastname']."',
 								 '".$account['firstname']."',
-								 '".$account['middlename']."',
-								 '".$account['bday']."',
-								 '".$account['org']."',
-								 '".$account['username']."',
-								 '".$account['password']."')";
+								 '".$account['org']."')";
 		$this->db->query($sql);
 		$this->db->close();
 	}

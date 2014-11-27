@@ -37,7 +37,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a id="header" class="navbar-brand" href="http://localhost/Mobile/index.php/map"><b>Dengue 101: Monitoring and Reporting Dengue Cases</b></a>
+            <a id="header" class="navbar-brand" href=""><b>Dengue 101: Monitoring and Reporting Dengue Cases</b></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -57,10 +57,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="http://localhost/hr_recordsystem/index.php/change_pass">Change Password</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost/hr_recordsystem/index.php/login/logout">Logout</a>
+                            <a href="http://localhost/Mobile/index.php/form_login/logout">Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -73,12 +70,17 @@
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar nav-stacked">
                     <li>
-                        <a href="http://localhost/Mobile/index.php/map">
-                            <img id="ProfPic" src = "<?php echo base_url('uploads/Android') ?>"></img>
+                        <a href="">
+                            <img id="ProfPic" src = "<?php echo base_url('uploads/Android.jpg') ?>"></img>
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/Mobile/index.php/map">
+                        <a href="">
+                            <h4><?php echo $this->session->userdata('firstname'); ?> <?php echo $this->session->userdata('lastname'); ?><h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Mobile/index.php/home">
                             <h4>Home</h4>
                         </a>
                     </li>

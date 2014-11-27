@@ -5,6 +5,7 @@ class Registration extends CI_Controller {
 	{
 		parent::__construct();
 
+		$this->load->model('M_login');
 		$this->load->model('Register');
 		$this->load->library('form_validation');
 		$this->load->helper('url');
@@ -19,22 +20,21 @@ class Registration extends CI_Controller {
 
 	public function register()
 	{
+		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
+		$this->form_validation->set_rules('number', 'Mobile Number', 'required|xss_clean');
 		$this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
-		$this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
 		$this->form_validation->set_rules('org', 'Organization', 'required|xss_clean');
-		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean|callback_user_exists');
-		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
 
 		if($this->form_validation->run() != NULL)
 		{
-			$account['lastname'] 	= $this->input->post('lastname');
-			$account['firstname'] 	= $this->input->post('firstname');
-			$account['middlename'] 	= $this->input->post('middlename');
-			$account['bday'] 		= $this->input->post('year')."-".$this->input->post('month')."-".$this->input->post('day');
-			$account['org'] 		= $this->input->post('org');
 			$account['username'] 	= $this->input->post('username');
 			$account['password'] 	= $this->input->post('password');
+			$account['number'] 		= $this->input->post('number');
+			$account['lastname'] 	= $this->input->post('lastname');
+			$account['firstname'] 	= $this->input->post('firstname');
+			$account['org'] 		= $this->input->post('org');
 
 			// echo "<pre>";
 			// print_r($account);
