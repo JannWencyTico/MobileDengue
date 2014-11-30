@@ -57,7 +57,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="http://localhost/Mobile/index.php/form_login/logout">Logout</a>
+                            <a href="http://localhost/Mobile/index.php/home/logout">Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -71,7 +71,7 @@
                 <ul class="nav nav-sidebar nav-stacked">
                     <li>
                         <a href="">
-                            <img id="ProfPic" src = "<?php echo base_url('uploads/Android.jpg') ?>"></img>
+                            <img id="ProfPic" src = "<?php echo base_url('images/Android.jpg') ?>"></img>
                         </a>
                     </li>
                     <li>
@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/Mobile/index.php/home/map">
+                        <a href="http://localhost/Mobile/index.php/home">
                             <h4>Home</h4>
                         </a>
                     </li>
