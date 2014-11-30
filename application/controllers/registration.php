@@ -5,7 +5,6 @@ class Registration extends CI_Controller {
 	{
 		parent::__construct();
 
-		$this->load->model('M_login');
 		$this->load->model('Register');
 		$this->load->library('form_validation');
 		$this->load->helper('url');

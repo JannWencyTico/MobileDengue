@@ -10,7 +10,7 @@ class Tips extends CI_Controller {
 		$this->load->helper('url');
 	}
 
-	function index()
+	public function index()
 	{
 		$this->load->view('includes/header');
 		$this->load->view('tips');

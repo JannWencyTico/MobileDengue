@@ -22,6 +22,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </head>
 
 <body>
+	<h1>Home</h1>
+   <h2>Welcome <?php echo $username; ?>!</h2>
+   <a href="home/logout">Logout</a>
 <div id="googleMap" style="width:600px;height:480px;"></div>
 
 </body>
