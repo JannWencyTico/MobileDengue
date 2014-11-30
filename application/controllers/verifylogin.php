@@ -33,9 +33,10 @@ class VerifyLogin extends CI_Controller {
  {
    //Field validation succeeded.  Validate against database
    $username = $this->input->post('username');
- 
+    $lastname = $this->input->post('lastname');
+    
    //query the database
-   $result = $this->login_model->login($username, $password);
+   $result = $this->login_model->login($username, $password,$lastname);
  
    if($result)
    {
@@ -44,7 +45,8 @@ class VerifyLogin extends CI_Controller {
      {
        $sess_array = array(
          'acount_id' => $row->acount_id,
-         'username' => $row->username
+         'username' => $row->username,
+          'lastname' => $row->lastname
        );
        $this->session->set_userdata('logged_in', $sess_array);
      }
