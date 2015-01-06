@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+         <link href="<?php echo base_url().'assets/css/Design.css'?>" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
         <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets/css/bootstrap-theme.css'?>" rel="stylesheet" type="text/css">
@@ -80,7 +81,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/Mobile/index.php/home">
+                        <a href="http://localhost/Mobiledenuge/index.php/home">
                             <h4>Home</h4>
                         </a>
                     </li>
@@ -90,7 +91,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/Mobile/index.php/tips">
+                        <a href="http://localhost/MobileDengue/index.php/tips">
                             <h4>F.A.Q</h4>
                         </a>
                     </li>
