@@ -81,7 +81,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/Mobiledenuge/index.php/home">
+                        <a href="http://localhost/Mobile/index.php/home">
                             <h4>Home</h4>
                         </a>
                     </li>
@@ -101,7 +101,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost/MobileDengue/index.php/tips">
+                        <a href="http://localhost/Mobile/index.php/slider">
                             <h4>F.A.Q</h4>
                         </a>
                     </li>

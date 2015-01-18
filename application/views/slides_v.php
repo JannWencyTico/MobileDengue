@@ -15,7 +15,7 @@
         //3 - add an p tag with id : SP++;    ex:  <p id="SP4"></p>
         //4 - change the value of nrImg 
 
-        var nrImg = 3;  //the number of img , I only have 3 
+        var nrImg = 7;  //the number of img , I only have 3 
         var IntSeconds = 4;     //the seconds between the imgs
 
         function Load()
@@ -36,7 +36,7 @@
             document.getElementById("S" + 0).style.backgroundColor = "rgba(255, 255, 255, 0.90)";
             document.getElementById("SP" + nrShown).style.visibility = "visible";
 
-            mytime = setInterval(Timer, IntSeconds * 1000);
+            mytime = setInterval(Timer, IntSeconds * 3000);
         }
         function Timer()
         {
@@ -54,7 +54,7 @@
             Effect();
 
             clearInterval(mytime);
-            mytime = setInterval(Timer, IntSeconds * 1000);
+            mytime = setInterval(Timer, IntSeconds * 3000);
         }
         function prev()
         {
@@ -64,7 +64,7 @@
             Effect();
 
             clearInterval(mytime);
-            mytime = setInterval(Timer, IntSeconds * 1000);
+            mytime = setInterval(Timer, IntSeconds * 3000);
         }
         //here changes the img + effect
         function Effect()
@@ -86,24 +86,32 @@
     </script>
     <title></title>
 </head>
-<body onload="Load()">
-    <div id="slider">
+<body id="body" onload="Load()">
+    <div class="slider">
         <div id="imgs">
             <!-- here you have to add the img tag -->
-            <img id="Img3" src="<?php echo base_url('images/Tip1.jpg') ?>">
-            <img id="Img2" src="<?php echo base_url('images/Tip2.jpg') ?>">
-            <img id="Img1" src="<?php echo base_url('images/Tip3.jpg') ?>">
+              <img id="Img1" src="<?php echo base_url('images/7P.jpg') ?>">
+            <img id="Img2" src="<?php echo base_url('images/1P.jpg') ?>">
+            <img id="Img3" src="<?php echo base_url('images/2P.jpg') ?>">
+            <img id="Img4" src="<?php echo base_url('images/3P.jpg') ?>">
+             <img id="Img5" src="<?php echo base_url('images/4P.jpg') ?>">
+              <img id="Img6" src="<?php echo base_url('images/5P.jpg') ?>">
+               <img id="Img7" src="<?php echo base_url('images/6P.jpg') ?>">
         </div>
         <!--Here is going to be the left right buttons, the info and the imgs shown-->
-        <div id="Snav">
+        <div class="Snav">
             <!-- here is the circles , showes the current img -->
-            <div id="SnavUp">
-                <div id="Scircles">
+            <div class="SnavUp">
+                <div class="Scircles">
                     <ul>
                         <!-- here you have to add the li tag-->
                         <li id="S0"></li>
                         <li id="S1"></li>
                         <li id="S2"></li>
+                        <li id="S3"></li>
+                        <li id="S4"></li>
+                          <li id="S5"></li>
+                            <li id="S6"></li>
                     </ul>
                 </div>
             </div>
@@ -115,9 +123,13 @@
             <!-- the info -->
             <div id="SnavBottom">
                 <!-- here you have to add the p tag-->
-                <p id="SP2">Hugasi ang flower Base</p>
-                <p id="SP0">Limpyohe ang mga ligid </p>
-                <p id="SP1">Limpyohe ang Atop</p>
+                 <p id="SP0">INFORMATION ABOUT DENGUE.</p>
+                <p id="SP1">The 4S Against Dengue.</p>
+                <p id="SP2">TIPS Number One. </p>
+                <p id="SP3">TIPS Number Two.</p>
+                <p id="SP4">TIPS Number Three.</p>
+                 <p id="SP5">TIPS Number Four.</p>
+                  <p id="SP6">TIPS Number Five.</p>
             </div>
         </div>
     </div>
