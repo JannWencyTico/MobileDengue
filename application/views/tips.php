@@ -1,5 +1,5 @@
 <title>Tips</title>
-
+    <img class="featurette-image img-responsive" src="<?php echo base_url('images/STOPDENGUE.jpg') ?>" height="100 "width="1000">
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-6">

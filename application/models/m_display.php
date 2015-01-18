@@ -20,31 +20,66 @@ class M_display extends CI_Model
 		$this->load->database($config);
 	}
 
-	public function list_district()
+	public function listBrgy()
 	{
-		$sql = "CALL list_district()";
+		$sql = "CALL display_brgy()";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
 		return $sQuery->result_array();
 	}
 
-	public function list_sub_district()
+	public function listGender()
 	{
-		$sql = "CALL list_sub_district()";
+		$sql = "CALL display_gender()";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
 		return $sQuery->result_array();
 	}
 
-	public function list_barangay()
+	public function listType()
 	{
-		$sql = "CALL list_barangay()";
+		$sql = "CALL display_type()";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
 		return $sQuery->result_array();
 	}
-	
+
+	public function listClassification()
+	{
+		$sql = "CALL display_classification()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function listOutcome()
+	{
+		$sql = "CALL display_outcome()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function inbox()
+	{
+		$sql = "CALL display_message()";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function reject_message($tempmsgID)
+	{
+		$sql = "CALL reject_message(".$tempmsgID.")";
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
 }

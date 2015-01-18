@@ -21,10 +21,8 @@
     </script>
 </head>
 <body>
-    <h1>Home</h1>
     <h2>Welcome <?php echo $firstname;?> <?php echo $lastname; ?>!</h2>
     <h2> <?php echo $this->session->userdata('firstname'); ?> <?php echo $this->session->userdata('lastname'); ?> </h2>
-    <a href="home/logout">Logout</a>
     <div id="googleMap" style="width:600px;height:480px;"></div>
 </body>
 </html>

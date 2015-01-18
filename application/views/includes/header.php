@@ -85,6 +85,16 @@
                         </a>
                     </li>
                     <li>
+                        <a href="http://localhost/Mobile/index.php/inbox">
+                            <h4>Inbox</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Mobile/index.php/report">
+                            <h4>Send Report</h4>
+                        </a>
+                    </li>
+                    <li>
                         <a href="http://localhost/Mobile/index.php/registration">
                             <h4>Register</h4>
                         </a>
