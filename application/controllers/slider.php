@@ -10,8 +10,12 @@ class Slider extends CI_Controller
 
 	function index()
 	{
+		$this->load->view('includes/header');
 		$this->load->helper(array('form'));
 		$this->load->view('slides_v');
+		$this->load->view('includes/footer');
+
+		
 	}
 
 }

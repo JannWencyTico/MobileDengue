@@ -101,7 +101,11 @@
                         </a>
                     </li>
                     <li>
+<<<<<<< HEAD
                         <a href="http://localhost/Mobile/index.php/tips">
+=======
+                        <a href="http://localhost/Mobile/index.php/slider">
+>>>>>>> 4e231cf30bc59502c420ab85fb33f15355f31d90
                             <h4>F.A.Q</h4>
                         </a>
                     </li>
