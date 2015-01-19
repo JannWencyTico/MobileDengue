@@ -27,14 +27,15 @@ class M_report extends CI_Model
 								 '".$report['firstname']."',
 								 '".$report['middlename']."',
 								 '".$report['age']."',
+								 '".$report['gender']."',
 								 '".$report['date_start']."',
 								 '".$report['date_end']."',
 								 '".$report['date_admitted']."',
-								 '".$report['gender']."',
 								 '".$report['brgy']."',
 								 '".$report['type']."',
 								 '".$report['classification']."',
-								 '".$report['outcome']."')";
+								 '".$report['outcome']."',
+								 '".$report['sender_id']."')";
 		$this->db->query($sql);
 		$this->db->close();
 	}

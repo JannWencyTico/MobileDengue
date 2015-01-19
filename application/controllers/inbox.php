@@ -71,7 +71,7 @@ class Inbox extends CI_Controller {
         $report['date_start']      	= $content['page_view_content']['0']['date_start'];
         $report['date_end']     	= $content['page_view_content']['0']['date_end'];
         $report['date_admitted']   	= $content['page_view_content']['0']['date_admitted'];
-        $report['gender']          	= $content['page_view_content']['0']['gender_id'];
+        $report['gender']          	= $content['page_view_content']['0']['gender'];
         $report['brgy']            	= $content['page_view_content']['0']['brgy_id'];
         $report['type']            	= $content['page_view_content']['0']['type_id'];
         $report['classification']  	= $content['page_view_content']['0']['class_id'];

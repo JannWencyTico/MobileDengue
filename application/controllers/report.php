@@ -14,13 +14,20 @@ class Report extends CI_Controller {
     {
 
         $content = array('page_content1' => $this->m_display->listBrgy(),
-                         'page_content2' => $this->m_display->listGender(),
                          'page_content3' => $this->m_display->listType(),
                          'page_content4' => $this->m_display->listClassification(),
                          'page_content5' => $this->m_display->listOutcome(),);
 
         // echo "<pre>";
         // print_r($content);
+        // echo "</pre>";
+        $session_data = $this->session->userdata('logged_in');
+        $data['lastname'] = $session_data['lastname'];
+        $data['firstname'] = $session_data['firstname'];
+        $data['acount_id'] = $session_data['acount_id'];
+
+        // echo "<pre>";
+        // print_r($data);
         // echo "</pre>";
 
         $this->load->view('includes/header');
@@ -30,6 +37,15 @@ class Report extends CI_Controller {
 
     public function send_new_report()
     {
+        $session_data = $this->session->userdata('logged_in');
+        $data['lastname'] = $session_data['lastname'];
+        $data['firstname'] = $session_data['firstname'];
+        $data['acount_id'] = $session_data['acount_id'];
+
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
+        
         $this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
         $this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
         $this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
@@ -46,14 +62,15 @@ class Report extends CI_Controller {
             $report['firstname']       = $this->input->post('firstname');
             $report['middlename']      = $this->input->post('middlename');
             $report['age']             = $this->input->post('age');
+            $report['gender']          = $this->input->post('gender');
             $report['date_start']      = $this->input->post('ds_year')."-".$this->input->post('ds_month')."-".$this->input->post('ds_day');
             $report['date_end']        = $this->input->post('de_year')."-".$this->input->post('de_month')."-".$this->input->post('de_day');
             $report['date_admitted']   = $this->input->post('da_year')."-".$this->input->post('da_month')."-".$this->input->post('da_day');
-            $report['gender']          = $this->input->post('gender');
             $report['brgy']            = $this->input->post('brgy');
             $report['type']            = $this->input->post('type');
             $report['classification']  = $this->input->post('classification');
             $report['outcome']         = $this->input->post('outcome');
+            $report['sender_id']       = $data['acount_id'];
 
             // echo "<pre>";
             // print_r($report);
@@ -69,6 +86,8 @@ class Report extends CI_Controller {
             echo "<script> alert('Please Insert Data'); history.go(-1); </script>";
         }
 
-    }
+        }
 }
+
+
 ?>

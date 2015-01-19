@@ -16,6 +16,7 @@ class Home extends CI_Controller
             $session_data = $this->session->userdata('logged_in');
             $data['lastname'] = $session_data['lastname'];
             $data['firstname'] = $session_data['firstname'];
+            $data['acount_id'] = $session_data['acount_id'];
 
             // echo "<pre>";
             // print_r($data);

@@ -35,7 +35,7 @@
                     echo '<th>Middlename:</th> <td>'.$page_view_content[$x]['middlename'].'</td>';
                 echo '</tr>';
                 echo '<tr>';
-                    echo '<th>Gender:</th> <td>'.$page_view_content[$x]['gender_name'].'</td>';
+                    echo '<th>Gender:</th> <td>'.$page_view_content[$x]['gender'].'</td>';
                 echo '</tr>';
                 echo '<tr>';
                     echo '<th>Age:</th> <td>'.$page_view_content[$x]['age'].'</td>';
@@ -50,7 +50,7 @@
                     echo '<th>Date Admitted:</th><td>'.$page_view_content[$x]['DAMonth'].' '.$page_view_content[$x]['DADay'].', '.$page_view_content[$x]['DAYear'].'</td>';
                 echo '</tr>';
                 echo '<tr>';
-                    echo '<th>Location:</th><td>'.$page_view_content[$x]['brgy_name'].'</td>';
+                    echo '<th>Location:</th><td>'.$page_view_content[$x]['brgy_desc'].'</td>';
                 echo '</tr>';
                 echo '<tr>';
                     echo '<th>Type:</th><td>'.$page_view_content[$x]['type_desc'].'</td>';

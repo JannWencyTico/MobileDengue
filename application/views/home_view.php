@@ -22,7 +22,6 @@
 </head>
 <body>
     <h2>Welcome <?php echo $firstname;?> <?php echo $lastname; ?>!</h2>
-    <h2> <?php echo $this->session->userdata('firstname'); ?> <?php echo $this->session->userdata('lastname'); ?> </h2>
-    <div id="googleMap" style="width:600px;height:480px;"></div>
+    <div id="googleMap" style="width:1000px;height:480px;"></div>
 </body>
 </html>

@@ -29,14 +29,6 @@ class M_display extends CI_Model
 		return $sQuery->result_array();
 	}
 
-	public function listGender()
-	{
-		$sql = "CALL display_gender()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
 
 	public function listType()
 	{
