@@ -13,16 +13,18 @@ class Home extends CI_Controller
     {
         if($this->session->userdata('logged_in'))
         {
-            $session_data = $this->session->userdata('logged_in');
-            $data['lastname'] = $session_data['lastname'];
-            $data['firstname'] = $session_data['firstname'];
-            $data['acount_id'] = $session_data['acount_id'];
+            $session_data       = $this->session->userdata('logged_in');
+            $data['account_id']  = $session_data['account_id'];
+            $data['username']   = $session_data['username'];
+            $data['name']   = $session_data['name'];
+            $data['mobilenum']  = $session_data['mobilenum'];
 
             // echo "<pre>";
             // print_r($data);
             // echo "</pre>";
+
             $this->load->view('includes/header');
-            $this->load->view('home_view', $data);
+            $this->load->view('maps', $data);
             $this->load->view('includes/footer');
             }
         else
@@ -40,14 +42,14 @@ class Home extends CI_Controller
     }
 
 
-
-    public function map()
+    function map()
     {
-    $this->load->view('includes/header');
-    $this->load->view('map');
-    $this->load->view('includes/footer');
+        $this->load->helper(array('form'));
+        $this->load->view('includes/header');
+        $this->load->view('maps');
+        $this->load->view('includes/footer');
     }
 
-    }
+}
 
 ?>

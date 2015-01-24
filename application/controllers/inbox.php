@@ -60,22 +60,24 @@ class Inbox extends CI_Controller {
 		$tempmsg_id = $this->uri->segment(3, 0);	
  		$content = array('page_view_content' => $this->m_view->message($tempmsg_id));
 
-		echo "<pre>";
-		print_r($content);
-		echo "</pre>";
+		// echo "<pre>";
+		// print_r($content);
+		// echo "</pre>";
 
 		$report['lastname']        	= $content['page_view_content']['0']['lastname'];
         $report['firstname']       	= $content['page_view_content']['0']['firstname'];
         $report['middlename']      	= $content['page_view_content']['0']['middlename'];
         $report['age']             	= $content['page_view_content']['0']['age'];
-        $report['date_start']      	= $content['page_view_content']['0']['date_start'];
-        $report['date_end']     	= $content['page_view_content']['0']['date_end'];
-        $report['date_admitted']   	= $content['page_view_content']['0']['date_admitted'];
         $report['gender']          	= $content['page_view_content']['0']['gender'];
+        $report['date_start']       = $content['page_view_content']['0']['date_start'];
+        $report['date_end']         = $content['page_view_content']['0']['date_end'];
+        $report['date_admitted']    = $content['page_view_content']['0']['date_admitted'];
         $report['brgy']            	= $content['page_view_content']['0']['brgy_id'];
         $report['type']            	= $content['page_view_content']['0']['type_id'];
         $report['classification']  	= $content['page_view_content']['0']['class_id'];
         $report['outcome']         	= $content['page_view_content']['0']['outcome_id'];
+        $report['sender_id']        = $content['page_view_content']['0']['sender_id'];
+        $report['Date_Sended_Time'] = $content['page_view_content']['0']['Date_Sended_Time'];
 
         echo "<pre>";
         print_r($report);

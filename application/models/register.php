@@ -24,13 +24,28 @@ class Register extends CI_Model {
 
 	public function add_account($account)
 	{
-		$sql = "CALL registration(
-								 '".$account['username']."',
-								 '".$account['password']."',
-								 '".$account['number']."',
-								 '".$account['lastname']."',
-								 '".$account['firstname']."',
-								 '".$account['org']."')";
+		// $sql = "CALL registration(
+		// 						 '".$account['username']."',
+		// 						 '".$account['password']."',
+		// 						 '".$account['name']."',
+		// 						 '".$account['mobilenum']."',
+		// 						 '".$account['organization']."')";
+
+		$sql = "INSERT INTO `dengue`.`account`
+				(
+					`username`,
+					`password`,
+					`name`,
+					`mobilenum`,
+					`organization`)
+				VALUES
+				(
+					'".$account['username']."',
+					'".$account['password']."',
+					'".$account['name']."',
+					'".$account['mobilenum']."',
+					'".$account['organization']."')";
+
 		$this->db->query($sql);
 		$this->db->close();
 	}

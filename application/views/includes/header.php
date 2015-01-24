@@ -25,14 +25,6 @@
         <script> $(function() { $( "#accordion2" ).accordion({ collapsible: true, active: false }); }); </script>
         <script> $(function() { $( "#promotions" ).accordion({ collapsible: true, active: false }); }); </script>
         <script> $(function() { $( "#faculty" ).accordion({ collapsible: true, active: false }); }); </script>
-        <!-- Just for debugging purposes. Don't actually copy this line! -->
-        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -72,7 +64,7 @@
                 <ul class="nav nav-sidebar nav-stacked">
                     <li>
                         <a href="">
-                            <img id="ProfPic" src = "<?php echo base_url('images/Android.jpg') ?>"></img>
+                            <img id="ProfPic" src = "<?php echo base_url('images/DengueLogo.png') ?>"></img>
                         </a>
                     </li>
                     <li>
@@ -101,11 +93,7 @@
                         </a>
                     </li>
                     <li>
-<<<<<<< HEAD
-                        <a href="http://localhost/Mobile/index.php/tips">
-=======
                         <a href="http://localhost/Mobile/index.php/slider">
->>>>>>> 4e231cf30bc59502c420ab85fb33f15355f31d90
                             <h4>F.A.Q</h4>
                         </a>
                     </li>

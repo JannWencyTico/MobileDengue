@@ -14,17 +14,16 @@ class Report extends CI_Controller {
     {
 
         $content = array('page_content1' => $this->m_display->listBrgy(),
-                         'page_content3' => $this->m_display->listType(),
-                         'page_content4' => $this->m_display->listClassification(),
-                         'page_content5' => $this->m_display->listOutcome(),);
+                         'page_content2' => $this->m_display->listSeverity(),);
 
         // echo "<pre>";
         // print_r($content);
         // echo "</pre>";
+        
         $session_data = $this->session->userdata('logged_in');
-        $data['lastname'] = $session_data['lastname'];
-        $data['firstname'] = $session_data['firstname'];
-        $data['acount_id'] = $session_data['acount_id'];
+        $data['name'] = $session_data['name'];
+        $data['mobilenum'] = $session_data['mobilenum'];
+        $data['account_id'] = $session_data['account_id'];
 
         // echo "<pre>";
         // print_r($data);
@@ -38,39 +37,34 @@ class Report extends CI_Controller {
     public function send_new_report()
     {
         $session_data = $this->session->userdata('logged_in');
-        $data['lastname'] = $session_data['lastname'];
-        $data['firstname'] = $session_data['firstname'];
-        $data['acount_id'] = $session_data['acount_id'];
+        $data['username'] = $session_data['username'];
+        $data['name'] = $session_data['name'];
+        $data['account_id'] = $session_data['account_id'];
+        $data['mobilenum'] = $session_data['mobilenum'];
 
         // echo "<pre>";
         // print_r($data);
         // echo "</pre>";
         
-        $this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
-        $this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
-        $this->form_validation->set_rules('middlename', 'Middle Name', 'required|xss_clean');
+        $this->form_validation->set_rules('name', 'Name', 'required|xss_clean');
         $this->form_validation->set_rules('age', 'Age', 'required|xss_clean');
         $this->form_validation->set_rules('gender', 'Gender', 'required|xss_clean');
-        $this->form_validation->set_rules('brgy', 'Barangay', 'required|xss_clean');
-        $this->form_validation->set_rules('type', 'Type', 'required|xss_clean');
-        $this->form_validation->set_rules('classification', 'Classification', 'required|xss_clean');
-        $this->form_validation->set_rules('outcome', 'Outcome', 'required|xss_clean');
+        $this->form_validation->set_rules('brgy_id', 'Barangay', 'required|xss_clean');
+        $this->form_validation->set_rules('severity_id', 'Outcome', 'required|xss_clean');
 
         if($this->form_validation->run() != NULL)
         {
-            $report['lastname']        = $this->input->post('lastname');
-            $report['firstname']       = $this->input->post('firstname');
-            $report['middlename']      = $this->input->post('middlename');
+            $report['name']            = $this->input->post('name');
             $report['age']             = $this->input->post('age');
             $report['gender']          = $this->input->post('gender');
+            $report['severity_id']     = $this->input->post('severity_id');
             $report['date_start']      = $this->input->post('ds_year')."-".$this->input->post('ds_month')."-".$this->input->post('ds_day');
             $report['date_end']        = $this->input->post('de_year')."-".$this->input->post('de_month')."-".$this->input->post('de_day');
             $report['date_admitted']   = $this->input->post('da_year')."-".$this->input->post('da_month')."-".$this->input->post('da_day');
-            $report['brgy']            = $this->input->post('brgy');
-            $report['type']            = $this->input->post('type');
-            $report['classification']  = $this->input->post('classification');
-            $report['outcome']         = $this->input->post('outcome');
-            $report['sender_id']       = $data['acount_id'];
+            $report['address']         = $this->input->post('type');
+            $report['brgy_id']         = $this->input->post('brgy_id');
+            $report['sender']          = $data['numbers'];
+            
 
             // echo "<pre>";
             // print_r($report);

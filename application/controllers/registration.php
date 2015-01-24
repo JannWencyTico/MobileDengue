@@ -19,21 +19,19 @@ class Registration extends CI_Controller {
 
 	public function register()
 	{
-		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
-		$this->form_validation->set_rules('number', 'Mobile Number', 'required|xss_clean');
-		$this->form_validation->set_rules('lastname', 'Last Name', 'required|xss_clean');
-		$this->form_validation->set_rules('firstname', 'First Name', 'required|xss_clean');
-		$this->form_validation->set_rules('org', 'Organization', 'required|xss_clean');
+		$this->form_validation->set_rules('username',		'Username', 	'required|xss_clean');
+		$this->form_validation->set_rules('password',		'Password', 	'required|xss_clean');
+		$this->form_validation->set_rules('name',			'Name ', 		'required|xss_clean');
+		$this->form_validation->set_rules('mobilenum', 		'Mobile Number','required|xss_clean');
+		$this->form_validation->set_rules('organization', 	'Organization', 'required|xss_clean');
 
 		if($this->form_validation->run() != NULL)
 		{
-			$account['username'] 	= $this->input->post('username');
-			$account['password'] 	= $this->input->post('password');
-			$account['number'] 		= $this->input->post('number');
-			$account['lastname'] 	= $this->input->post('lastname');
-			$account['firstname'] 	= $this->input->post('firstname');
-			$account['org'] 		= $this->input->post('org');
+			$account['username'] 		= $this->input->post('username');
+			$account['password'] 		= $this->input->post('password');
+			$account['name'] 			= $this->input->post('name');
+			$account['mobilenum'] 		= $this->input->post('mobilenum');
+			$account['organization'] 	= $this->input->post('organization');
 
 			// echo "<pre>";
 			// print_r($account);

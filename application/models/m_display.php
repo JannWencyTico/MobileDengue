@@ -22,7 +22,9 @@ class M_display extends CI_Model
 
 	public function listBrgy()
 	{
-		$sql = "CALL display_brgy()";
+		// $sql = "CALL display_brgy()";
+		$sql = "SELECT * FROM dengue.barangay";
+
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
@@ -30,27 +32,11 @@ class M_display extends CI_Model
 	}
 
 
-	public function listType()
+	public function listSeverity()
 	{
-		$sql = "CALL display_type()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
+		// $sql = "CALL display_severity()";
+		$sql = "SELECT * FROM dengue.severity";
 
-		return $sQuery->result_array();
-	}
-
-	public function listClassification()
-	{
-		$sql = "CALL display_classification()";
-		$sQuery = $this->db->query($sql);
-		$this->db->close();
-
-		return $sQuery->result_array();
-	}
-
-	public function listOutcome()
-	{
-		$sql = "CALL display_outcome()";
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
@@ -59,7 +45,23 @@ class M_display extends CI_Model
 
 	public function inbox()
 	{
-		$sql = "CALL display_message()";
+		// $sql = "CALL display_message()";
+		$sql = "SELECT
+				tempmsg.tempmsg_id,
+			    name,
+			    age,
+			    gender,
+			    diagnosis,
+				barangay.brgy_desc,
+				severity.severity_desc,
+			    sender,
+			    date_sent
+
+				FROM tempmsg
+
+			    INNER JOIN barangay ON barangay.brgy_id = tempmsg.brgy_id
+				INNER JOIN severity ON severity.severity_id = tempmsg.severity_id WHERE status = 0";
+
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 
@@ -68,7 +70,27 @@ class M_display extends CI_Model
 
 	public function reject_message($tempmsgID)
 	{
-		$sql = "CALL reject_message(".$tempmsgID.")";
+		// $sql = "CALL reject_message(".$tempmsgID.")";
+		$sql = "DELETE FROM `dengue`.`tempmsg` WHERE tempmsg_id = ".$tempmsgID."";
+
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+	}
+
+	public function reject_request($request_id)
+	{
+		// $sql = "CALL reject_request(".$request_id.")";
+		$sql = "DELETE FROM `dengue`.`requests` WHERE request_id = ".$request_id."";
+
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+	}
+
+	public function request()
+	{
+		// $sql = "CALL display_request()";
+		$sql = "SELECT * FROM dengue.requests WHERE status = 0";
+
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 

@@ -22,21 +22,49 @@ class M_report extends CI_Model
 
 	public function send_report($report)
 	{
-		$sql = "CALL report(
-								 '".$report['lastname']."',
-								 '".$report['firstname']."',
-								 '".$report['middlename']."',
-								 '".$report['age']."',
-								 '".$report['gender']."',
-								 '".$report['date_start']."',
-								 '".$report['date_end']."',
-								 '".$report['date_admitted']."',
-								 '".$report['brgy']."',
-								 '".$report['type']."',
-								 '".$report['classification']."',
-								 '".$report['outcome']."',
-								 '".$report['sender_id']."')";
+		// $sql = "CALL report(
+		// 						 '".$report['name']."',
+		// 						 '".$report['age']."',
+		// 						 '".$report['gender']."',
+		// 						 '".$report['severity_id']."',
+		// 						 '".$report['date_start']."',
+		// 						 '".$report['date_end']."',
+		// 						 '".$report['date_admitted']."',
+		// 						 '".$report['address']."',
+		// 						 '".$report['brgy_id']."',
+		// 						 '".$report['sender']."',
+		// 						 '".$report['date_sent']."')";
+
+		$sql = "INSERT INTO `dengue`.`patient`
+					(
+						`name`,
+						`age`,
+						`gender`,
+						`severity_id`,
+						`date_start`,
+						`date_end`,
+						`date_admitted`,
+						`address`,
+						`brgy_id`,
+						`sender`,
+						`date_sent`)
+					VALUES
+					(
+						'".$report['name']."',
+						'".$report['age']."',
+						'".$report['gender']."',
+						'".$report['severity_id']."',
+						'".$report['date_start']."',
+						'".$report['date_end']."',
+						'".$report['date_admitted']."',
+						'".$report['address']."',
+						'".$report['brgy_id']."',
+						'".$report['sender']."',
+						'".$report['date_sent']."')";
+
+
 		$this->db->query($sql);
 		$this->db->close();
 	}
+
 }

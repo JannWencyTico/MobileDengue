@@ -4,8 +4,8 @@
 <div id="body">
     <?php
     $gender = array(
-                    'Male' => 'Male',
-                    'Female' => 'Female');
+                    'M' => 'Male',
+                    'F' => 'Female');
 
     $months = array(    
                     '1'  => 'Jan',
@@ -33,34 +33,23 @@
     {
         $barangay_option[$page_content1[$x]['brgy_id']] = $page_content1[$x]['brgy_desc'];
     }
-    for($x=0;$x<count($page_content3);$x++)
+    for($x=0;$x<count($page_content2);$x++)
     {
-        $type_option[$page_content3[$x]['type_id']] = $page_content3[$x]['type_desc'];
+        $severity_option[$page_content2[$x]['severity_id']] = $page_content2[$x]['severity_desc'];
     }
-    for($x=0;$x<count($page_content4);$x++)
-    {
-        $class_option[$page_content4[$x]['class_id']] = $page_content4[$x]['class_desc'];
-    }
-    for($x=0;$x<count($page_content5);$x++)
-    {
-        $outcome_option[$page_content5[$x]['outcome_id']] = $page_content5[$x]['outcome_desc'];
-    }
-       
+
         echo "<table class='table table-striped'>";
             $this->load->helper('form');
             echo form_open('report/send_new_report');
-                echo "<tr><td>Last Name</td><td>".form_input('lastname', NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>First Name</td><td>".form_input('firstname', NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>Middle Name</td><td>".form_input('middlename', NULL, 'class="form-control input-sm"')."</td></tr>";;
-                echo "<tr><td>Age</td><td>".form_input('age', NULL, 'class="form-control input-sm"')."</td></tr>";;
+                echo "<tr><td>Name</td><td>".form_input('name', NULL, 'class="form-control input-sm"')."</td></tr>";
+                echo "<tr><td>Age</td><td>".form_input('age', NULL, 'class="form-control input-sm"')."</td></tr>";
+                echo "<tr><td>Gender</td><td>".form_dropdown('gender', $gender, NULL, 'class="form-control input-sm"')."</td></tr>";
+                echo "<tr><td>Severity</td><td>".form_dropdown('severity_id',$severity_option, NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Date Start</td><td>".form_dropdown('ds_month',$months, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('ds_day',$days, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('ds_year',$year, NULL, 'class="span1" class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Date End</td><td>".form_dropdown('de_month',$months, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('de_day',$days, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('de_year',$year, NULL, 'class="span1" class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td>Date Admitted</td><td>".form_dropdown('da_month',$months, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('da_day',$days, NULL, 'class="span1" class="form-control input-sm"') ." ". form_dropdown('da_year',$year, NULL, 'class="span1" class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>Gender</td><td>".form_dropdown('gender', $gender, NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>Barangay</td><td>".form_dropdown('brgy',$barangay_option, NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>Type</td><td>".form_dropdown('type',$type_option, NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>Classification</td><td>".form_dropdown('classification',$class_option, NULL, 'class="form-control input-sm"')."</td></tr>";
-                echo "<tr><td>Outcome</td><td>".form_dropdown('outcome',$outcome_option, NULL, 'class="form-control input-sm"')."</td></tr>";
+                echo "<tr><td>Address</td><td>".form_input('address', NULL, 'class="form-control input-sm"')."</td></tr>";
+                echo "<tr><td>Barangay</td><td>".form_dropdown('brgy_id',$barangay_option, NULL, 'class="form-control input-sm"')."</td></tr>";
                 echo "<tr><td align='right' colspan=2>".form_submit('mysubmit', 'Send', 'class="btn btn-primary"')."</td></tr>";
             echo form_close();
         echo "</table>";
