@@ -61,9 +61,11 @@ class Report extends CI_Controller {
             $report['date_start']      = $this->input->post('ds_year')."-".$this->input->post('ds_month')."-".$this->input->post('ds_day');
             $report['date_end']        = $this->input->post('de_year')."-".$this->input->post('de_month')."-".$this->input->post('de_day');
             $report['date_admitted']   = $this->input->post('da_year')."-".$this->input->post('da_month')."-".$this->input->post('da_day');
-            $report['address']         = $this->input->post('type');
+            $report['address']         = $this->input->post('address');
+            $report['latitude']        = $this->input->post('latitude');
+            $report['longtitude']      = $this->input->post('longtitude');
             $report['brgy_id']         = $this->input->post('brgy_id');
-            $report['sender']          = $data['numbers'];
+            $report['sender']          = $data['mobilenum'];
             
 
             // echo "<pre>";

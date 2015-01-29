@@ -32,6 +32,7 @@ class Registration extends CI_Controller {
 			$account['name'] 			= $this->input->post('name');
 			$account['mobilenum'] 		= $this->input->post('mobilenum');
 			$account['organization'] 	= $this->input->post('organization');
+			// $account['organization'] 	= $this->input->post('organization');
 
 			// echo "<pre>";
 			// print_r($account);

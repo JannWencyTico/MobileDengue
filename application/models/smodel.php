@@ -6,7 +6,7 @@ class Smodel extends CI_Model {
 		$config['hostname'] = "localhost";
 		$config['username'] = "root";
 		$config['password'] = "";
-		$config['database'] = "dengue";
+		$config['database'] = "capstone";
 		$config['dbdriver'] = "mysql";
 		$config['dbprefix'] = "";
 		$config['pconnect'] = FALSE;

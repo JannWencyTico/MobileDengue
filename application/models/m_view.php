@@ -7,7 +7,7 @@ class M_view extends CI_Model
 		$config['hostname'] = "localhost";
 		$config['username'] = "root";
 		$config['password'] = "";
-		$config['database'] = "dengue";
+		$config['database'] = "capstone";
 		$config['dbdriver'] = "mysql";
 		$config['dbprefix'] = "";
 		$config['pconnect'] = FALSE;
@@ -32,6 +32,7 @@ class M_view extends CI_Model
 		        tempmsg.age,
 		        tempmsg.gender,
 		        tempmsg.diagnosis,
+
 		        tempmsg.date_start,
 		        tempmsg.date_end,
 		        tempmsg.date_admitted,
@@ -47,6 +48,10 @@ class M_view extends CI_Model
 		        tempmsg.address,
 		        tempmsg.brgy_id,
 		        barangay.brgy_desc,
+		        barangay.brgy_desc,
+				barangay.latitude,
+				barangay.longtitude,
+				severity.severity_desc,
 		        tempmsg.severity_id,
 		        severity.severity_desc,
 		        tempmsg.sender,
@@ -73,6 +78,16 @@ class M_view extends CI_Model
 		// $sql = "CALL view_request(".$request_id.")";
 		$sql = "SELECT * FROM requests WHERE requests.request_id = ".$request_id."";
 		
+		$sQuery = $this->db->query($sql);
+		$this->db->close();
+
+		return $sQuery->result_array();
+	}
+
+	public function code($username)
+	{
+		$sql = "SELECT * FROM account WHERE username = '".$username."'";
+
 		$sQuery = $this->db->query($sql);
 		$this->db->close();
 

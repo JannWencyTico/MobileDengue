@@ -64,24 +64,24 @@ class Inbox extends CI_Controller {
 		// print_r($content);
 		// echo "</pre>";
 
-		$report['lastname']        	= $content['page_view_content']['0']['lastname'];
-        $report['firstname']       	= $content['page_view_content']['0']['firstname'];
-        $report['middlename']      	= $content['page_view_content']['0']['middlename'];
+		$report['name']        	    = $content['page_view_content']['0']['name'];
         $report['age']             	= $content['page_view_content']['0']['age'];
         $report['gender']          	= $content['page_view_content']['0']['gender'];
+        $report['diagnosis']        = $content['page_view_content']['0']['diagnosis'];
+        $report['severity']         = $content['page_view_content']['0']['severity_id'];
         $report['date_start']       = $content['page_view_content']['0']['date_start'];
         $report['date_end']         = $content['page_view_content']['0']['date_end'];
         $report['date_admitted']    = $content['page_view_content']['0']['date_admitted'];
-        $report['brgy']            	= $content['page_view_content']['0']['brgy_id'];
-        $report['type']            	= $content['page_view_content']['0']['type_id'];
-        $report['classification']  	= $content['page_view_content']['0']['class_id'];
-        $report['outcome']         	= $content['page_view_content']['0']['outcome_id'];
-        $report['sender_id']        = $content['page_view_content']['0']['sender_id'];
-        $report['Date_Sended_Time'] = $content['page_view_content']['0']['Date_Sended_Time'];
+        $report['address']          = $content['page_view_content']['0']['address'];
+        $report['brgy_id']          = $content['page_view_content']['0']['brgy_id'];
+        $report['latitude']         = $content['page_view_content']['0']['latitude'];
+        $report['longtitude']       = $content['page_view_content']['0']['longtitude'];
+        $report['sender']           = $content['page_view_content']['0']['sender'];
+        $report['date_sent']        = $content['page_view_content']['0']['date_sent'];
 
-        echo "<pre>";
-        print_r($report);
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r($report);
+        // echo "</pre>";
         
         $this->load->model('m_report');
         $this->m_report->send_report($report);

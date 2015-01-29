@@ -24,6 +24,9 @@
                 echo '<tr>';
                     echo '<th>Organization:</th><td>'.$page_view_content[$x]['organization'].'</td>';
                 echo '</tr>';
+                echo '<tr>';
+                    echo '<th>Email:</th><td>'.$page_view_content[$x]['email'].'</td>';
+                echo '</tr>';
             }
         ?>
     </table>

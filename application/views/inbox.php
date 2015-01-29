@@ -7,7 +7,10 @@
         <tr align="left">
             <th>Sender</th>
             <th>From</th>
-            <th>Diagnosis</th>           
+            <th>Diagnosis</th>    
+            <th>Details</th>    
+            <th>Confirm</th>   
+            <th>Reject</th>
         </tr>
         <?php
             for($x=0;$x<count($page_content);$x++)
@@ -17,13 +20,10 @@
                         echo "<td>".$page_content[$x]['sender']."</td>";
                         echo "<td>".$page_content[$x]['brgy_desc']."</td>";
                         echo "<td>".$page_content[$x]['diagnosis']."</td>";
-                        echo '<td><a href="'.base_url().'index.php/inbox/view_message/'.$page_content[$x]['tempmsg_id'].'"><button class="btn btn-primary btn-sm">View</button></a></td>';
-                        echo '<td><a href="'.base_url().'index.php/inbox/confirm_message/'.$page_content[$x]['tempmsg_id'].'"><button class="btn btn-success btn-sm">Confirm</button></a></td>';
-                        echo '<td><a href="'.base_url().'index.php/inbox/reject_message/'.$page_content[$x]['tempmsg_id'].'"><button class="btn btn-danger btn-sm">Reject</button></a></td>';
+                        echo '<td><a href="'.base_url().'index.php/inbox/view_message/'.$page_content[$x]['tempmsg_id'].'"><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></button></a></td>';
+                        echo '<td><a href="'.base_url().'index.php/inbox/confirm_message/'.$page_content[$x]['tempmsg_id'].'"><button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></a></td>';
+                        echo '<td><a href="'.base_url().'index.php/inbox/reject_message/'.$page_content[$x]['tempmsg_id'].'"><button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></a></td>';
                     echo '</tr>';
-                
-                //echo '<td><a href="'.base_url().'index.php/view_faculty/view/'.$faculty[$x]['emp_id'].'">View</a></td>';
-                //echo '<td><a href="'.base_url().'index.php/update_faculty/update_form/'.$faculty[$x]['emp_id'].'">Update</a></td>';
             }
         ?>    
     </table>

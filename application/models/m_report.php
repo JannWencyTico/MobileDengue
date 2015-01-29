@@ -7,7 +7,7 @@ class M_report extends CI_Model
 		$config['hostname'] = "localhost";
 		$config['username'] = "root";
 		$config['password'] = "";
-		$config['database'] = "dengue";
+		$config['database'] = "capstone";
 		$config['dbdriver'] = "mysql";
 		$config['dbprefix'] = "";
 		$config['pconnect'] = FALSE;
@@ -35,7 +35,7 @@ class M_report extends CI_Model
 		// 						 '".$report['sender']."',
 		// 						 '".$report['date_sent']."')";
 
-		$sql = "INSERT INTO `dengue`.`patient`
+		$sql = "INSERT INTO `patient`
 					(
 						`name`,
 						`age`,
@@ -45,6 +45,8 @@ class M_report extends CI_Model
 						`date_end`,
 						`date_admitted`,
 						`address`,
+						`latitude`,
+						`longtitude`,
 						`brgy_id`,
 						`sender`,
 						`date_sent`)
@@ -58,6 +60,8 @@ class M_report extends CI_Model
 						'".$report['date_end']."',
 						'".$report['date_admitted']."',
 						'".$report['address']."',
+						'".$report['latitude']."',
+						'".$report['longtitude']."',
 						'".$report['brgy_id']."',
 						'".$report['sender']."',
 						'".$report['date_sent']."')";

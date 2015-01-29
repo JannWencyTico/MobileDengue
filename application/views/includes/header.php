@@ -35,14 +35,14 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <?php echo form_open('search/execute_search');?>
+                    <!-- <?php echo form_open('search/execute_search');?>
                     <form id="searchBar" class="navbar-form navbar-left" role="search">
                         <div class="col-md-15">
                             <div class="form-group">
                                 <input type="text" name="search" class="form-control" placeholder="Search Patient">
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -68,28 +68,23 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <h4><?php echo $this->session->userdata('firstname'); ?> <?php echo $this->session->userdata('lastname'); ?><h4>
-                        </a>
-                    </li>
-                    <li>
                         <a href="http://localhost/Mobile/index.php/home">
                             <h4>Home</h4>
                         </a>
                     </li>
                     <li>
                         <a href="http://localhost/Mobile/index.php/inbox">
-                            <h4>Inbox</h4>
+                            <h4>Sent Reports</h4>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="http://localhost/Mobile/index.php/report">
                             <h4>Send Report</h4>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a href="http://localhost/Mobile/index.php/registration">
-                            <h4>Register</h4>
+                        <a href="http://localhost/Mobile/index.php/request">
+                            <h4>Request</h4>
                         </a>
                     </li>
                     <li>

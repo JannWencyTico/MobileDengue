@@ -31,8 +31,11 @@
                     echo '<th>Date Admitted:</th><td>'.$page_view_content[$x]['DAMonth'].' '.$page_view_content[$x]['DADay'].', '.$page_view_content[$x]['DAYear'].'</td>';
                 echo '</tr>';
                 echo '<tr>';
-                    echo '<th>Location:</th><td>'.$page_view_content[$x]['brgy_desc'].'</td>';
+                    echo '<th>Address:</th><td>'.$page_view_content[$x]['address'].', '.$page_view_content[$x]['brgy_desc'].'</td>';
                 echo '</tr>';
+                // echo '<tr>';
+                //     echo '<th>Barangay:</th><td>'.$page_view_content[$x]['brgy_desc'].'</td>';
+                // echo '</tr>';
                 echo '<tr>';
                     echo '<th>Outcome:</th><td>'.$page_view_content[$x]['severity_desc'].'</td>';
                 echo '</tr>';
